@@ -1,0 +1,28 @@
+1. show dbs
+2. use dev
+3. db.createCollection('Booklist')      - create table
+4. db.createCollection('Employee') 
+5. show collections
+6. db.employee.drop()  - error as it is case sensitive
+7. db.Employee.drop()
+8. show collections
+9. db.dropDatabase()  - drop Database
+10. use prod
+11. db.booklist.insert({Title:"Rich Dad Poor Dad",Price:100})
+12. show dbs
+13. show collections
+14. db.booklist.find()
+15. db.booklist.find().pretty()
+16. db.products.insertMany( [
+...       { item: "card", qty: 15 },
+...       { item: "envelope", qty: 20 },
+...       { item: "stamps" , qty: 30 }
+...    ] );
+17. db.booklist.find({Price:100}).pretty()
+18. db.booklist.find({Price:10}).pretty()
+19. db.booklist.find({Price:{$gte:90}}).pretty()                    -gte,lte,gt,lt,eq
+20. db.booklist.find({Price:{$gte:1000}}).pretty()
+21. db.booklist.update({Price:100},{$set:{Title:"Elon Mask"}})
+22. db.booklist.find({Price:{$gte:90}}).pretty()
+23. db.booklist.find().pretty()
+
