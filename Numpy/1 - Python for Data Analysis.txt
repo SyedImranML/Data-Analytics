@@ -1,0 +1,118 @@
+Multiple types of roles in Data Science
+
+Data Analyst   - BI Analyst
+Data Scientist  - ML Engineer
+Data Engineer
+Business Analyst
+
+What is common between all this role
+- Data is common 
+
+Most of coporate store data in RDBMS (relational database management system)
+
+to fetch data we use structure query language
+mySQL,SQLServer ,Oracle ,PLSQL Postgre,sparkSQL etc.
+Fetch and manipulate.
+
+
+if you go to any companies python is the top required  now days.
+
+why python is important ?
+
+lot of companies use python now days.
+as you know any job that you go you will see  python is the top requirements
+ now think why is that
+
+can you give 2 to 3 reasons why companies prefer python 
+
+why it is universaly expected.
+
+1. open source : Free to use
+2. libraries - numpy,pandas,matplotlib,seaborn if want to do machine learning statmods,scikit learn 
+    (lot of libraries that are pre created you can use it)
+3. Easy to learn - Almost english like with some syntaxes.
+    if you compare python is 1000 times easier than jave or c++.
+
+4. Great community support  
+if you search for any error on google you will find an answer for it.
+because all of people use python and they come across that error
+
+they post those errors online people solve it.
+
+
+In python you not  only build machine learning model but
+ you can build machine learning model.
+data analysis
+website
+games
+GUI
+
+we are learning python for Data science
+
+lets see how Data science projects work:
+--------------------------------------------------------
+Step 0 : understanding the problem statement  
+             collecting data
+
+step 1 : importing the libraries in python
+            importing data
+
+step 2:  inspecting the data
+
+step 3:  Data cleaning
+            in this we will do missing value treatment and outlier  treatment
+
+step 4: EDA - Exploratory Data Analysis.
+            viz.
+            uni /BI / Multi variate Analysis.
+
+Step 5: Feature transformation  & Feature Engg. when we learn machine learning.
+
+Step 6 : Model Building
+            ...
+            multiple steps in this 
+
+step 7: Finalizing Models / Improving.
+
+you have learned about Python Data types:
+1. list []
+2. Tuples - ()
+3. Dict :{key:value}
+4. set: {} do not contain any duplicates
+
+
+Numpy - Numerical Python
+----------------------------------------
+What ever aggregation or mathematical function you do it come from numpy libraries
+any thing numerical you do comes from numpy library.
+
+
+then we use pandas -> pandas is where you load data and manipulation
+what kinds of manipulation
+
+ones we have done pandas we will  do vizualization multiple libraries.
+ 1. pandas
+2. matplotlib
+3.seaborn
+
+if you want build career in Data science numpy ,pandas will be there through out .
+
+
+Example :
+
+Id    Name
+1      Syed 
+2       Mohit      -> you can load this data in pandas DataFrame.
+
+if want to add id you use numpy library 1+2
+if want Upper case we use pandas text function
+
+
+python libraries are endless in nature you should also explore you knowlege.
+
+
+
+
+
+
+ 
