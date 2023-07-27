@@ -1,0 +1,63 @@
+1506
+
+Window Function:
+- Window function are analytical function in SQL
+- Window function lets you perform calculation that required to create sub queries.
+
+Syntax :
+
+func(col1) over(partition by .... order by...)
+
+3 types of window function
+
+
+1. Aggregate  window functions
+
+sum(col1)  over(partition by ... Order by ...)
+avg(col1) over(partition by ...order by...)
+
+
+2. Value window functions:
+
+lead(col1)   over(partition by ... order by...)
+lag(col1)     over(partition by ... order by ...)
+  
+3. Rank Window Functions
+
+row_number()  over(partition by ... order by ...)
+rank()    over(partition by ... order by ...)
+dense_rank()  over(partition by ... order by ...)
+
+
+Note :   In all of this queries partitional clause remains optional.
+
+select *, row_number() over(order by name) as rnum from t10;
+
+when we use row_number() as funtion my output will be sequencial series.
+
+
+select *, rank() over(order by name) as rank from t10;
+
+repeats for duplicate value and is not sequencial
+
+select *,dense_rank() over(order by name) as drank from t10;
+
+dense_rank also repeats for same values but its sequential 
+
+
+1. Aggregate Function
+
+select *,sum(age) over(order by name) as new_sum from t20;  -> create a running sum/ also known as cummulative sum
+->Running Avg
+
+Practice this with order by name desc for all 2 clause.
+
+lead() :   it shift the value upwards
+select *,lead(age) over(order by name) as le_ad from t20;
+
+lag() : it shift the value downwards
+select *,lag(age) over(order by name) as le_ag from t20;
+
+
+
+

@@ -1,0 +1,52 @@
+13 - Functions (SQL), Indexing, Views (SQL)
+1606
+
+select *, sum(age) over (partition by name order by name) as new_sum,
+avg(age) over (partition by name order by name) as new_avg from t10;
+
+Frames : let us define the window size within a window function
+----------------------------------------------------------------------------------------
+
+select *, sum(age) over (partition by name order by name rows unbounded preceding) as new_sum,
+avg(age) over (partition by name order by name  rows unbounded preceding) as new_avg from t10;
+
+what unbounded preceding does it makes every entities individual.
+
+Name Age
+Akash    30
+Avinash 20
+Jade  21
+Jane25
+Mark  26
+
+select *,
+sum(age) over(order by name ) as new_sum,
+sum(age) over (order by name rows between 2 preceding and 0 following) as nsum
+from t20;
+
+select *,
+sum(age) over(order by name ) as new_sum,
+sum(age) over (order by name rows between 1 preceding and 1 following) as nsum
+from t20;
+
+
+-- filter all names present on even positions
+-- filter all the names present on odd positions
+
+select * from
+(select *,row_number() over ( order by name) as rnum from names) x
+where rnum %2 ==0;
+
+select * from
+(select *,row_number() over ( order by name) as rnum from names) x
+where rnum %2 !=0;
+
+-- find the top 2 salaries in each department
+
+select * from (
+select *,row_number() over (partition by dept order by salary desc) as rnum from salary ) x
+where x.rnum < 3;
+
+-- find the max salary in each department
+
+select dept,max(salary) from salary group by slaary desc;

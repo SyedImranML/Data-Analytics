@@ -1,0 +1,106 @@
+5 - SELECT STATEMENT, Primary and Foreign Keys, Altering Columns and Tables, Creating
+
+
+select * from demo;
+
+select * from demo where id=3;
+select * from demo where id=10;
+select * from demo where id=50; #no error as syntax is correct;
+select * from demo where id between 1 and 10;
+select * from demo where id not between 1 and 10;
+select * from demo where id > 20;
+select * from demo where id<10;
+select * from demo where id<4;
+select * from demo where id<=4;
+
+select * from demo where name = 'Created by';
+
+--filter single column based on multiple VALUES
+
+select * from demo where name in ( 'Created by' ,'Twitter');
+select * from demo where name in ( 'Created by' ,'Twitter','Chart');
+select * from demo where name in ( 'Created by' ,'Twitter','Chart','Syed');
+select * from demo where name in ( 'Created by' ,'Twitter','Chart',Syed);
+select * from demo where name not in ( 'Created by' ,'Twitter');
+select * from demo where name = 'twitter';
+
+-- SQL as a language is case insensetive, but data is always case sensetive
+
+-- filtering on more columns or say two columns
+-- Multiple columns then we can used AND / OR 
+
+--AND
+-- AND condition works when both conditions are true in nature
+
+select * from demo where id=4 and name = 'Twitter';
+select * from demo where id=5 and name = 'Twitter';
+
+-- this twp values should be true on single row of data
+
+-- OR
+
+select * from demo where id=4 or name = 'Twitter';
+select * from demo where id=5 or name = 'Twitter';
+
+-- OR condition works when either of the conditions are true
+
+--Questions
+
+select * from demo where name='Twitter' or name='Created by' and id=1;
+-- AND condition takes higher precidence
+-- AND condition works when both conditions are true in nature
+select * from demo where name='Created by' or name='Twitter' and id=1;
+
+select * from demo where name='Twitter' or (name='Created by' and id=1);
+
+select * from demo where name='Twitter' AND (name='Created by' and id=1);
+
+select * from demo where name='Twitter' AND (name='Created by' or id=5);
+
+select * from demo where name='Twitter' or (name='Created by' or id=5);
+
+---------------
+
+select * from demo where name = 'twitter' ; --no_output
+select * from demo where upper(name) = 'TWITTER' ;
+
+--starts with T
+select * from demo where name like 'T%';
+select * from demo where name like 't%';
+select * from demo where name like '%rt';
+select * from demo where name like '%rt%';
+select * from demo where name like '%od%';
+select * from demo where name like '%it%';
+
+select * from demo where name not like 'T%';
+-- % is called as wild cards
+
+------------
+
+select * from demo limit 5;
+select name,upper(name) from demo limit 5;
+select name,upper(name) as Upname from demo limit 5;
+select name,upper(name) as upname,lower(name) as Loname from demo limit 5;
+
+-----
+insert into demo values (0,'TWITTER','ABCD');
+select * from demo;
+
+select * from demo where name = 'Twitter';
+select * from demo where name = 'TWITTER';
+
+-- Both these together
+select * from demo where name='Twitter' or name = 'TWITTER';
+
+-- what if when twiiter is stored in 10 diff combinations
+--twiTTer Twitter twittER...
+
+select * from demo where upper(name)='TWITTER'; -- all the name will be in capital letters
+select * from demo where lower(name)='twitter';
+
+-- above queries original column doesn't change
+
+
+select * from demo where (name='Created by' and name ='Twitter') or id=5 and id=1;
+select * from demo where (name='Created by' and name ='Twitter') or id=5 or id=1;
+select * from demo where (name='Created by' or name ='Twitter') or id=5 and id=1;

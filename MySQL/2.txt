@@ -1,0 +1,86 @@
+6 - UPDATE AND DELETE (SQL), Operators (SQL), FILTERING (SQL) - WHERE
+
+
+create table wt (gender varchar(20),
+                 wt int);
+
+insert into wt (gender,wt) values ('m',70),('m',80),('m',90),('f',60),('f',70),('f',50);
+
+create table wt1 (gender varchar(20),
+                 wt int);
+                 
+insert into wt1 values ('m',70),('m',80),('m',90),('f',60),('f',70),('f',600);
+select * from wt1;
+
+
+select * from wt;
+
+select gender from wt;
+
+select distinct gender from wt;  -- distinct removes duplicates
+
+select distinct gender,wt from wt;
+
+insert into wt values('m',70);
+select * from wt;
+select distinct gender,wt from wt;
+
+--Text Function 
+
+
+select gender,upper(gender) as UP ,lower(gender) as LO from wt;
+
+select count(*) from wt;
+
+select count(gender),count(distinct gender) from wt;
+
+insert into wt values('M',100);
+
+select * from wt;
+
+select count(gender),count(distinct gender) from wt;
+
+select count(gender),count(distinct upper(gender)) from wt;
+
+select max(wt) as max_wt,min(wt) as min_wt from wt;
+
+select sum(wt) as sum_wt ,sum(wt)/count(wt) as Avg_wt from wt;
+
+select wt,wt+10 as new_wt from wt;
+
+select *,wt+10 as new_wt from wt;
+
+select *,wt-10 as new_wt from wt;
+
+select *,(wt/10)  as new_wt from wt;
+
+create table new_wt as 
+select *,(wt/10)  as new_wt from wt;
+
+select * from new_wt;
+
+drop table new_wt;
+
+select * from wt;
+
+select count(*) from wt; -- count entire table
+
+-- group by clause : aggregate data on categories / columns!
+
+select gender,count(*) from wt group by gender;
+
+select count(*) from wt group by gender; 
+
+select upper(gender),count(*) from wt group by upper(gender);
+
+--Order by clasuse asc/desc
+
+select * from wt order by wt;
+
+select * from wt order by wt asc;
+
+select * from wt order by wt desc;
+
+-- find max , min ,count for each gender (M,F)
+
+select upper(gender),max(wt),min(wt),count(*) from wt group by upper(gender);

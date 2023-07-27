@@ -1,0 +1,84 @@
+1306
+use practice;
+
+select firstname,lower(firstname) as loname,upper(firstname) as upname from employees;
+select concat(firstname,'-',lastname)from employees; -- -
+select concat(firstname,' ',lastname)from employees;  -- space
+
+substring
+
+select * from employees limit 5;
+selecct firstname,substr(firstname,1,3) as sb from employees limit 5;
+selecct firstname,substr(firstname,2,3) as sb from employees limit 5;
+select name,substr(name,length(name),2) as new from abc;  -last charecter
+select name,substr(name, -1) from abc;
+select name,substr(name,-2) from abc;
+
+
+
+select name,replace(name,'Syed','SyedImran') as new from abc1;
+selecct firstname,substr(firstname,1,1) as sb from employees limit 5;
+
+-- Fetch last char of any string
+select substr(firstname,length(firstname),1) from employees;
+
+select length(firstname) from employees;
+
+select length('Hello') as new;
+select length('Hello  ') as new2;
+
+select length(trim('Hello  ') as new2;
+select length(trim('  Hello  ') as new2;
+
+select lastname,replace(lastname,'Murphy','Syed') as new from employees;
+
+
+-- Datetime
+select current_date();  --only date
+select now();  --timestamp
+
+select current_date,year(current_date) as yr, month(current_date) as ym, day(current_date) as yd;
+
+select date("2023-06-13") as new;
+
+Two dates calculate difference 
+select datediff(current_date,current_date-10) as new2;
+select datediff(current_date,"2023-01-01") as new2;  --No. of days between the two dates
+
+select date_format(date(paymentDate,"%Y-%m-%D") from payments;
+select date_format(date(paymentDate,"%D-%m-%Y") from payments;
+select date_format(date(paymentDate,"%D:%m:%Y") from payments;
+
+select data_add(date(paymentDate), INTERVAL 2 DAY) as new from payments;
+select date(paymentDate) as t1, date_add(date(paymentDate), INTERVAL -2 DAY) as t2 from payments;
+select date(paymentDate) as t1, date_add(date(paymentDate), INTERVAL -2 MONTH) as t2 from payments;
+
+
+-- View 
+-- Temporary tables 
+-- view don't take any memory
+-- reviewing /intermediate tables
+
+select * from emp_uv where fastname like 'A%';
+
+Indexing
+-----------
+- It is used to improve performances
+- Index helps us in faster retrieval of data.
+
+create index idx_last_name  on employees (last_name);
+
+select * from employees where report is null;
+
+
+create view emp_vu as select * from employees where employeenumber > 1100;
+
+
+
+
+
+
+
+
+
+ 

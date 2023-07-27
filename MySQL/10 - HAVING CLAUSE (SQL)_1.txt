@@ -1,0 +1,84 @@
+create table person (
+ id int primary key,
+gender char(1),
+weight decimal(5,2));
+
+insert into person (id, gender,weight) values
+(1, 'M',70.5),
+(2, 'M',75.2),
+(3, 'M',80.1),
+(4,'F',55.8),
+(5,'F',60.3),
+(6,'F',65.6);
+
+
+create table person1 (
+ id int,
+gender char,
+weight int);
+
+-- Write a query to find count(*) for 'M', 'F' ?
+
+- select count(*) from person1;
+- select gender,count(*) from person1 group by gender;
+- select gender,count(*) as cnt from person1 group by gender;
+
+-- Subquery
+
+select * from 
+(select gender,count(*) as cnt 
+from person1 group by gender ) x
+where cnt > 3;
+
+select * from 
+(select gender,count(*) as cnt 
+from person1 group by gender ) as x     -- as is optional
+where cnt > 3;
+
+
+select * from
+(select x.gender from 
+(select gender,count(*) as cnt 
+from person1 group by gender ) x
+where cnt > 3) y 
+where gender !='F';
+
+-- CTE : Comman Table Expression
+
+with my_cte as (select gender,count(*) as cnt 
+from person group by gender)
+
+select * from my_cte;
+select * from my_cte where cnt > 3;
+
+
+
+select gender,count(*) as cnt from person group by gender where cnt > 3;  --Error
+
+-- where cnt > 3; where clause filter row by row
+
+-- Having clause can filter on aggregated groups !
+
+--- group by works with having only
+
+-- Where Vs Having clause
+ --where is not working because of order of execution of SQL scripts
+
+Order of execution
+----------------------------
+from
+join
+where
+group by 
+having 
+select
+order by
+limit
+offset 
+
+
+select gender,count(*) from person1 group by gender having count(*) > 3;
+select gender,count(*)  as cnt from person1 group by gender having cnt > 3;
+
+
+
