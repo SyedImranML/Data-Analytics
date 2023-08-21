@@ -1,0 +1,30 @@
+
+Exploratory Data Analysis (EDA), Data Visualization in Python
+
+Step 0 - Understanding the problem statement / Data
+
+Step 1 - Importing the libraries , read the data
+
+Step 2- Inspecting the data.
+             "aligning the datatypes"
+
+Step 3 - Cleaning the data
+              a. missing value
+              b. outliers
+Step 4 - Exploratory Data Analysis (viz)        
+
+Establish relationship,finding trends/patterns,checking for correlation                       
+             - UniVariate Analysis  ( Analyse Single Variable)
+            - BiVariate Analysis   ( Analyse 2 Variable)
+            - Multi Variate Analysis ( Analyse 2 + Variable)
+Libraries :
+1. Matplotlib - Main Library
+2. seaborn - Build on top matplotlib,provides statistical graphsand advance editing options.
+3. Pandas - Basics plots 
+
+simple viz. Basic plots -
+1. line graphs
+2. bar 
+3. scatter 
+
+Establish relationship,finding trends/patterns,checking for correlation
